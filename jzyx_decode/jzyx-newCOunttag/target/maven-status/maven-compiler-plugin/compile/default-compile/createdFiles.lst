@@ -1,0 +1,3 @@
+com\ideal\countTag\CountTag.class
+com\ideal\countTag\CountTag$MyReduce.class
+com\ideal\countTag\CountTag$MyMapper.class

@@ -1,0 +1,3 @@
+com\ideal\mapreduce\TagCountReducer.class
+com\ideal\mapreduce\TagCountMapper.class
+com\ideal\mapreduce\Main.class

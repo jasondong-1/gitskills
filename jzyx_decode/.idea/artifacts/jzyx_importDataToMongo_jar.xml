@@ -1,0 +1,12 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="jzyx-importDataToMongo:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/jzyx_importDataToMongo_jar</output-path>
+    <root id="archive" name="jzyx-importDataToMongo.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/jzyx-importDataToMongo/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="jzyx-importDataToMongo" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.1.0/mongo-java-driver-3.1.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
