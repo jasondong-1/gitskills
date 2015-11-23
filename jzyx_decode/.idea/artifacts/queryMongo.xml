@@ -1,9 +1,0 @@
-<component name="ArtifactManager">
-  <artifact type="jar" build-on-make="true" name="queryMongo">
-    <output-path>$PROJECT_DIR$/out/artifacts/queryMongo</output-path>
-    <root id="archive" name="queryMongo.jar">
-      <element id="module-output" name="jzyx-queryMongo" />
-      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.1.0/mongo-java-driver-3.1.0.jar" path-in-jar="/" />
-    </root>
-  </artifact>
-</component>
