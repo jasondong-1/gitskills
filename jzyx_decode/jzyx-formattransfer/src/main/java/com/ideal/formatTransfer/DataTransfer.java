@@ -57,10 +57,14 @@ public class DataTransfer extends Configured implements Tool{
             String meid;
             if(splitInfo.length==3){
                 meid=splitInfo[2];
+                if("\\N".equals(meid)){
+                    meid="";
+                }
             }else{
                 meid="";
             }
-            ad=ad+"+"+meid;
+            //ad=ad+"+"+meid;
+            ad="".equals(meid)?ad:ad+"+"+meid;
             ad=ad.replaceAll(",","");
             //��ȡÿ����ǩ����Ȩ�ص�����
             String[] allTagMes=tagMes.split(";");//["IT,IT��Դ:1","������Ѷ,������Ѷ:24"];

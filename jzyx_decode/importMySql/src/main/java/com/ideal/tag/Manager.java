@@ -101,7 +101,6 @@ public class Manager {
 					ResultDto rd=parseResult(result, areaId);
 					if(rd!=null)
 					dtos.add(rd);
-
 				}
 			}
 			saveResultDto(dtos);
@@ -111,15 +110,17 @@ public class Manager {
 	// result --> resultDto
     private static ResultDto parseResult(Result result, Long areaId) throws SQLException {
 		try {
+			//System.out.println(result.toString());
 			ResultDto dto = new ResultDto();
 			dto.setAreaId(areaId);
 			//System.out.println(Initial.tag.get(result.getLevel() + "\t" + result.getName()));
-			dto.setTagId(Initial.tag.get(result.getLevel() + "\t" + result.getName()));
+			//dto.setTagId(Initial.tag.get(result.getLevel() + "\t" + result.getName()));
+			dto.setTagId(Initial.tag.get(result.getName()));
 			dto.setHeatValue(result.getHeatValue());
-			dto.setTagNums(result.getUserNums());
+			dto.setTagNums((int)(result.getTagNums()));
 			return dto;
 		}catch (Exception e){
-			e.printStackTrace();
+			//e.printStackTrace();
 		}
     	return null;
     }

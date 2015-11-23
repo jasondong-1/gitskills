@@ -18,9 +18,11 @@ public class Meid extends UDF{
         for(String s:meidSet){
             meids=meids+s+"_MEID_";
         }
-
-
-        return new Text(meids);
+        StringBuilder builder = new StringBuilder(meids);
+        if(!StringUtils.isEmpty(meids)) {
+            builder.delete(meids.lastIndexOf("_MEID_"), meids.length());
+        }
+        return new Text(builder.toString());
 
     }
     /**
@@ -45,4 +47,7 @@ public class Meid extends UDF{
 
     }
 
+    public static void main(String[] args) {
+        evaluate(null,null);
+    }
 }

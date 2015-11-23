@@ -14,6 +14,7 @@ import org.apache.hadoop.fs.PathFilter;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -37,11 +38,11 @@ public class Mingmi {
             String line = it.next();
             String[] parts = line.split("\t");
             //解密字段待定
-            if (parts.length <= 6 || StringUtils.isBlank(parts[0]) || StringUtils.isBlank(parts[1])) {
+            if (parts.length < 6 || StringUtils.isBlank(parts[0]) || StringUtils.isBlank(parts[3])) {
                 continue;
             }
             total++;
-            maps.put(parts[1].trim(), parts[0].trim());
+            maps.put(parts[3].trim(), parts[0].trim());
         }
         System.out.println("total:" + total);
     }

@@ -1,0 +1,9 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="importDataToMongoMingmi">
+    <output-path>$PROJECT_DIR$/out/artifacts/importDataToMongoMingmi</output-path>
+    <root id="archive" name="importDataToMongoMingmi.jar">
+      <element id="module-output" name="jzyx-importDataToMongomingmi" />
+      <element id="extracted-dir" path="$MAVEN_REPOSITORY$/org/mongodb/mongo-java-driver/3.1.0/mongo-java-driver-3.1.0.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>

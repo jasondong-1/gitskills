@@ -11,15 +11,15 @@ import com.google.common.collect.Maps;
 
 public class Tag {	
 	private Long id;
-	private int level;
+	//private int level;
 	private String name;
 	
 	public Tag(){}
 	
-	public Tag(Long id, String name, int level) {
+	public Tag(Long id, String name) {
 		this.id = id;
 		this.name = name;
-		this.level = level;
+
 	}
 	
 	public Long getId() {
@@ -30,13 +30,13 @@ public class Tag {
 		this.id = id;
 	}
 
-	public int getLevel() {
-		return level;
-	}
-
-	public void setLevel(int level) {
-		this.level = level;
-	}
+//	public int getLevel() {
+//		return level;
+//	}
+//
+//	public void setLevel(int level) {
+//		this.level = level;
+//	}
 
 	public String getName() {
 		return name;
@@ -48,12 +48,12 @@ public class Tag {
 
 	public Tag make(String line) {
 		String[] parts = line.trim().split("\t",  -1);
-		if(parts.length != 3) {
+		if(parts.length != 2) {
 			throw new IllegalArgumentException("Initial failure because of the wrong numbers while prcoessing the 'tag'." + line);
 		}
-		this.setId(Long.parseLong(parts[0]));
-		this.setName(parts[1]);
-		this.setLevel(Integer.parseInt(parts[2]));
+		this.setId(Long.parseLong(parts[1]));
+		this.setName(parts[0]);
+		//this.setLevel(Integer.parseInt(parts[2]));
 		return this;
 	}
 	
@@ -63,7 +63,8 @@ public class Tag {
 		for(String line : lines) {
 			Tag tmp = new Tag();
 			tmp.make(line);
-			tag.put(tmp.getLevel() + "\t" + tmp.getName(),  tmp.getId());
+			//tag.put(tmp.getLevel() + "\t" + tmp.getName(),  tmp.getId());
+			tag.put(tmp.getName(),tmp.getId());
 		}
 		return tag;
 	}

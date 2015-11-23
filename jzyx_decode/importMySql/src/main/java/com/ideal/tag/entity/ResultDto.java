@@ -55,4 +55,16 @@ public class ResultDto {
 	}
 
 	public ResultDto(){};
+
+	@Override
+	public String toString() {
+		return "ResultDto{" +
+				"id=" + id +
+				", areaId=" + areaId +
+				", tagId=" + tagId +
+				", tagNums=" + tagNums +
+				", percent=" + percent +
+				", heatValue=" + heatValue +
+				'}';
+	}
 }

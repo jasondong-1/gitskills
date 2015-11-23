@@ -74,14 +74,26 @@ public class Decoder {
                     String adWeight = arrAds[i];
                     //获取密文和meid号
                     String CiphertextAndMeid = adWeight.split(":", -1)[0];
+                    //获取ad和meid
+                    String[] adAndMeid=CiphertextAndMeid.split("\\+",-1);
                     //获取密文
-                    String Ciphertext=CiphertextAndMeid.split("\\+",-1)[0];
-                    // 获取Meis
-                    String meids=CiphertextAndMeid.split("\\+",-1)[1];
-                    //将密文转换为明文
-                    String plaintext = maps.get(Ciphertext);
+                    String Ciphertext=adAndMeid[0];
+                    // 获取Meid
+                    String meids="";
+                    String sign="";
+                    if(adAndMeid.length==2){
+                        meids=CiphertextAndMeid.split("\\+",-1)[1];
+                        sign="+";
+                    }
 
-                    newLine.append(StringUtils.trimToEmpty(plaintext)+"+"+meids + ":" + adWeight.split(":")[1] + ",");
+
+                    //将密文转换为明文
+                    //String plaintext = maps.get(Ciphertext)==null?Ciphertext:maps.get(Ciphertext);
+                    String plaintext=maps.get(Ciphertext);
+                    if(StringUtils.isEmpty(plaintext))
+                        continue;
+
+                    newLine.append(StringUtils.trimToEmpty(plaintext)+sign+meids + ":" + adWeight.split(":")[1] + ",");
 
                 }
                 newLine.deleteCharAt(newLine.length()-1);

@@ -11,13 +11,12 @@
     <module>jzyx-decode</module>
       <module>importMySql</module>
       <module>jzyx-3join4</module>
-      <module>jzyx-countTag</module>
       <module>jzyx-user-tags</module>
       <module>jzyx-tagCount</module>
-      <module>jzyx-newCOunttag</module>
       <module>jzyx-formattransfer</module>
       <module>jzyx-importDataToMongo</module>
-      <module>jzyx-importDataToLocalMongo</module>
+      <module>jzyx-countTagEdition3</module>
+      <module>jzyx-importDataToMongomingmi</module>
   </modules>
 
 
@@ -28,8 +27,6 @@
       <logback.version>1.0.13</logback.version>
       <hadoop.version>2.6.0</hadoop.version>
       <jackson.version>2.4.0</jackson.version>
-      <slf4j.version>1.7.5</slf4j.version>
-      <logback.version>1.0.13</logback.version>
       <commons-logging.version>1.1.3</commons-logging.version>
       <hive-exec.version>1.2.0</hive-exec.version>
       <mongo.version>3.1.0</mongo.version>
@@ -43,6 +40,45 @@
           <scope>test</scope>
       </dependency>
   </dependencies>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>commons-logging</groupId>
+                <artifactId>commons-logging</artifactId>
+                <version>${commons-logging.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hive</groupId>
+                <artifactId>hive-exec</artifactId>
+                <version>${hive-exec.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-common</artifactId>
+                <version>${hadoop.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.hadoop</groupId>
+                <artifactId>hadoop-mapreduce-client-core</artifactId>
+                <version>${hadoop.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongo-java-driver</artifactId>
+                <version>${mongo.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 
 
 </project>

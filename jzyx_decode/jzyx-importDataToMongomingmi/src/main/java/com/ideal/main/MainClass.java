@@ -8,9 +8,9 @@ import ocm.ideal.top10000.Top10000;
 public class MainClass {
 	public static void main(String[] args) {
 		//Log log=LogFactory.getLog(MainClass.class);
-		if(args.length!=3){
+		if(args.length!=2){
 			//log.error("reference [city] [date]");
-			System.out.println("reference [inputpath]  [outputpath] [city]");
+			System.out.println("reference [inputpath]  [city]");
 			System.exit(-1);
 		}else{
 //			String city=args[0];
@@ -18,11 +18,8 @@ public class MainClass {
 //			Top10000.top10000(city, date);
 //			UpdateData.update(city, date);
 			String inputPath=args[0];
-			String outputPath=args[1];
-			String city=args[2];
-			Top10000.top10000(inputPath,outputPath);
-			UpdateData.update(outputPath,city);
-
+			String city=args[1];
+			UpdateData.update(inputPath,city);
 		}
 		
 	}
